@@ -50,8 +50,7 @@ public class User {
 
 
 
-	public User(int user_id, String userName, String name, String email, String password, String imagePath,
-			LocalDateTime createdAt, String privilege) {
+	public User(int user_id, String userName, String name, String email, String password, String imagePath,String privilege) {
 		super();
 		this.user_id = user_id;
 		this.userName = userName;
@@ -59,7 +58,7 @@ public class User {
 		this.email = email;
 		this.password = password;
 		this.imagePath = imagePath;
-		this.createdAt = createdAt;
+		//this.createdAt = createdAt;
 		this.privilege = privilege;
 	}
 	
