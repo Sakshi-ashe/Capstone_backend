@@ -114,4 +114,17 @@ public class FavouriteServiceTest {
 		assertEquals(null,favouriteService.contains(book1,user));
 		
 	}
+	@Test
+	public void testDeleteFavourite() {
+		Book book1=new Book(2,"Book1","Description1","Contributor1","Author1");
+		User user=new User(1,"user1","name1","email1","password1","imagePath1","privilege1");
+		
+		Favourite fav=new Favourite(book1,user);
+		List<Favourite> f=new ArrayList<Favourite>();
+		f.add(fav);
+		
+	    favouriteService.remove(fav);
+		verify(favouriteRepository,times(1)).deleteById(fav.getId());
+	}
+	
 }
