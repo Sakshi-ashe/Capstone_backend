@@ -86,12 +86,10 @@ public class AuthController {
 	
 	
 	@GetMapping("/getAllBooks")
-    public ResponseEntity<?> getAllBooks(@RequestHeader HttpHeaders headers ) {
-	String api="https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key="+apiKey;
-	System.out.println(api);
-        BookApiModel bookApiModel = restTemplate.getForObject(api, BookApiModel.class);
-        bookApiModel= new BookApiModel(bookApiModel.getStatus(),bookApiModel.getCopyright(),bookApiModel.getNum_results(),bookApiModel.getResults());
-        return new ResponseEntity<BookApiModel>(bookApiModel,HttpStatus.OK);
+    public ResponseEntity<?> getAllBooks() {
+		List<Book> books=bService.getAllBooks();
+		
+        return new ResponseEntity<List<Book>>(books,HttpStatus.OK);
         
         }
 
