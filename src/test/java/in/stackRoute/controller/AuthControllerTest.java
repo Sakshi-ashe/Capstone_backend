@@ -31,6 +31,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import in.stackRoute.food.FoodDeliveryApplication;
 import in.stackRoute.food.controller.AuthController;
 import in.stackRoute.food.model.Book;
@@ -72,15 +74,20 @@ class AuthControllerTest {
 		@MockBean	
 		private AuthenticationManager authenticationManager;
 
+		String bearerToken = "";
 
 
 	@Before 
 	public void setUp() throws Exception { 
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+		bearerToken =
+"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMjAwIiwiZXhwIjoxNjIxMzU5NTk3LCJpYXQiOjE2MjEzMjM1OTd9.4BaeDNGui0yK_HujEUr9D9qPIWiyueDMU6X6kVKNDVI"				
+				;
 	}
-	String bearerToken =
 
-"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMjAwIiwiZXhwIjoxNjIxMjY4NzA2LCJpYXQiOjE2MjEyMzI3MDZ9.Ywu7vjtXfTgJzKm7dhsbjwOwDh6pmkjTFuA9S92wnpE";
+	//String bearerToken =
+
+//"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMjAwIiwiZXhwIjoxNjIxMjY4NzA2LCJpYXQiOjE2MjEyMzI3MDZ9.Ywu7vjtXfTgJzKm7dhsbjwOwDh6pmkjTFuA9S92wnpE";
 	@Test
 	void testGetBookByID() throws Exception{
 		mockMvc.perform(MockMvcRequestBuilders.get("/getBook/1")
@@ -202,24 +209,21 @@ class AuthControllerTest {
 		.andExpect(MockMvcResultMatchers.status().is4xxClientError());
 	}
 
+	@Test 
+	void testPostRegister_positive() throws Exception{ User user = new
+	User(200,"user1","user2","user1","user1", "user1", "user1");
+	Mockito.when(userService.createUser(ArgumentMatchers.any())).thenReturn(user)
+	; mockMvc.perform(MockMvcRequestBuilders.post("/register")
+			.contentType(MediaType.APPLICATION_JSON).content(asJsonString(user)))
+	.andExpect(MockMvcResultMatchers.status().isCreated()); }
 
 
-	@Test
-	void testPostRegister_positive() throws Exception{
-		User user = new User();
-		user.setUserName("Aniket90");
-		user.setPassword("pass");
-		user.setEmail("aniket@gmail.com");
-		user.setName("Aniket Pant");
-		user.setUser_id(900);
+	public static String asJsonString(final Object obj) { try {
 
-		Mockito.when(userService.createUser(ArgumentMatchers.any())).thenReturn(user);
+		return new ObjectMapper().writeValueAsString(obj); } catch (Exception e) {
+			throw new RuntimeException(e); } }
 
-		mockMvc.perform(MockMvcRequestBuilders.post("/register")
-				.contentType(MediaType.APPLICATION_JSON))
-		.andExpect(MockMvcResultMatchers.status().isOk());
-
-	}
-
-
+	/*
+	 * @Test void testAuthentication() { Auth auth=new Auth("name","password"); }
+	 */
 }
