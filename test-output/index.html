@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
+              <span class="suite-name border-passed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+                    <span>testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">26 methods,   26 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.WithoutAuthTest" class="method navigator-link" hash-for-method="test_AddBookToDB_WithoutAuth">test_AddBookToDB_WithoutAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.WithoutAuthTest" class="method navigator-link" hash-for-method="test_AddToFav_WithoutAuth">test_AddToFav_WithoutAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_AddToFavourite_withAuth">test_AddToFavourite_withAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.WithoutAuthTest" class="method navigator-link" hash-for-method="test_RemoveFromFav_WithoutAuth">test_RemoveFromFav_WithoutAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_RemoveFromFavourite_withAuth">test_RemoveFromFavourite_withAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_addBooksToDb_withAuth">test_addBooksToDb_withAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_fav_withAuth">test_fav_withAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.WithoutAuthTest" class="method navigator-link" hash-for-method="test_getAllBooks_WithoutAuth">test_getAllBooks_WithoutAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_getAllBooks_withAuth">test_getAllBooks_withAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.WithoutAuthTest" class="method navigator-link" hash-for-method="test_getBookByID_WithoutAuth">test_getBookByID_WithoutAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_getBookById_withAuth">test_getBookById_withAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.WithoutAuthTest" class="method navigator-link" hash-for-method="test_getFav_WithoutAuth">test_getFav_WithoutAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.WithoutAuthTest" class="method navigator-link" hash-for-method="test_getHomePage_WithoutAuth">test_getHomePage_WithoutAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_getHomePage_withAuth">test_getHomePage_withAuth</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_postAuth_negative({
+  &quot;userName&quot; : &quot;user6&quot;,
+  &quot;password&quot; : &quot;WRONG_PASSWORD&quot;
+})">test_postAuth_negative({
+  "userName" : "user6",
+  "password" : "WRONG_PASSWORD"
+})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_postAuth_negative({
+  &quot;userName&quot; : &quot;user100&quot;,
+  &quot;password&quot; : &quot;pass&quot;
+})">test_postAuth_negative({
+  "userName" : "user100",
+  "password" : "pass"
+})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_postAuth_negative({
+  &quot;userName&quot; : &quot;&quot;,
+  &quot;password&quot; : &quot;pass&quot;
+})">test_postAuth_negative({
+  "userName" : "",
+  "password" : "pass"
+})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_postAuth_negative({
+  &quot;userName&quot; : &quot;user6&quot;,
+  &quot;password&quot; : &quot;&quot;
+})">test_postAuth_negative({
+  "userName" : "user6",
+  "password" : ""
+})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_postAuth_negative({
+  &quot;userName&quot; : &quot;&quot;,
+  &quot;password&quot; : &quot;&quot;
+})">test_postAuth_negative({
+  "userName" : "",
+  "password" : ""
+})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RestAssuredTest" class="method navigator-link" hash-for-method="test_postAuth_positive({
+  &quot;userName&quot; : &quot;user6&quot;,
+  &quot;password&quot; : &quot;pass&quot;
+})">test_postAuth_positive({
+  "userName" : "user6",
+  "password" : "pass"
+})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RegisterRestTest" class="method navigator-link" hash-for-method="test_postRegister_negative({&quot;userName&quot;: &quot;user13&quot;,
+&quot;name&quot;: &quot;xyz&quot;,
+&quot;email&quot;: &quot;user13@gmail.com&quot;,
+&quot;password&quot;: &quot;pass&quot;})">test_postRegister_negative({"userName": "user13",
+"name": "xyz",
+"email": "user13@gmail.com",
+"password": "pass"})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RegisterRestTest" class="method navigator-link" hash-for-method="test_postRegister_negative({&quot;userName&quot;: &quot;user16&quot;,
+&quot;name&quot;: &quot;xyz&quot;,
+&quot;email&quot;: &quot;user16@gmail.com&quot;})">test_postRegister_negative({"userName": "user16",
+"name": "xyz",
+"email": "user16@gmail.com"})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RegisterRestTest" class="method navigator-link" hash-for-method="test_postRegister_negative({&quot;name&quot;: &quot;xyz&quot;,
+&quot;email&quot;: &quot;user15@gmail.com&quot;,
+&quot;password&quot;: &quot;pass&quot;})">test_postRegister_negative({"name": "xyz",
+"email": "user15@gmail.com",
+"password": "pass"})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RegisterRestTest" class="method navigator-link" hash-for-method="test_postRegister_negative({&quot;userName&quot;: &quot;user13&quot;,
+&quot;name&quot;: &quot;xyz&quot;,
+&quot;email&quot;: &quot;user14@gmail.com&quot;,
+&quot;password&quot;: &quot;pass&quot;})">test_postRegister_negative({"userName": "user13",
+"name": "xyz",
+"email": "user14@gmail.com",
+"password": "pass"})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RegisterRestTest" class="method navigator-link" hash-for-method="test_postRegister_negative({&quot;userName&quot;: &quot;user14&quot;,
+&quot;name&quot;: &quot;xyz&quot;,
+&quot;email&quot;: &quot;user13@gmail.com&quot;,
+&quot;password&quot;: &quot;pass&quot;})">test_postRegister_negative({"userName": "user14",
+"name": "xyz",
+"email": "user13@gmail.com",
+"password": "pass"})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="in.stackRoute.RestAssured.RegisterRestTest" class="method navigator-link" hash-for-method="test_postRegister_negative({&quot;userName&quot;: &quot;user15&quot;,
+&quot;name&quot;: &quot;xyz&quot;,
+&quot;password&quot;: &quot;pass&quot;})">test_postRegister_negative({"userName": "user15",
+"name": "xyz",
+"password": "pass"})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">in.stackRoute.RestAssured.RegisterRestTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postRegister_negative({&quot;userName&quot;: &quot;user13&quot;,
+&quot;name&quot;: &quot;xyz&quot;,
+&quot;email&quot;: &quot;user13@gmail.com&quot;,
+&quot;password&quot;: &quot;pass&quot;})">
+                  </a> <!-- test_postRegister_negative({"userName": "user13",
+"name": "xyz",
+"email": "user13@gmail.com",
+"password": "pass"}) -->
+                  <span class="method-name">test_postRegister_negative</span>
+                  <span class="parameters">({"userName": "user13",
+"name": "xyz",
+"email": "user13@gmail.com",
+"password": "pass"})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postRegister_negative({&quot;userName&quot;: &quot;user16&quot;,
+&quot;name&quot;: &quot;xyz&quot;,
+&quot;email&quot;: &quot;user16@gmail.com&quot;})">
+                  </a> <!-- test_postRegister_negative({"userName": "user16",
+"name": "xyz",
+"email": "user16@gmail.com"}) -->
+                  <span class="method-name">test_postRegister_negative</span>
+                  <span class="parameters">({"userName": "user16",
+"name": "xyz",
+"email": "user16@gmail.com"})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postRegister_negative({&quot;name&quot;: &quot;xyz&quot;,
+&quot;email&quot;: &quot;user15@gmail.com&quot;,
+&quot;password&quot;: &quot;pass&quot;})">
+                  </a> <!-- test_postRegister_negative({"name": "xyz",
+"email": "user15@gmail.com",
+"password": "pass"}) -->
+                  <span class="method-name">test_postRegister_negative</span>
+                  <span class="parameters">({"name": "xyz",
+"email": "user15@gmail.com",
+"password": "pass"})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postRegister_negative({&quot;userName&quot;: &quot;user13&quot;,
+&quot;name&quot;: &quot;xyz&quot;,
+&quot;email&quot;: &quot;user14@gmail.com&quot;,
+&quot;password&quot;: &quot;pass&quot;})">
+                  </a> <!-- test_postRegister_negative({"userName": "user13",
+"name": "xyz",
+"email": "user14@gmail.com",
+"password": "pass"}) -->
+                  <span class="method-name">test_postRegister_negative</span>
+                  <span class="parameters">({"userName": "user13",
+"name": "xyz",
+"email": "user14@gmail.com",
+"password": "pass"})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postRegister_negative({&quot;userName&quot;: &quot;user14&quot;,
+&quot;name&quot;: &quot;xyz&quot;,
+&quot;email&quot;: &quot;user13@gmail.com&quot;,
+&quot;password&quot;: &quot;pass&quot;})">
+                  </a> <!-- test_postRegister_negative({"userName": "user14",
+"name": "xyz",
+"email": "user13@gmail.com",
+"password": "pass"}) -->
+                  <span class="method-name">test_postRegister_negative</span>
+                  <span class="parameters">({"userName": "user14",
+"name": "xyz",
+"email": "user13@gmail.com",
+"password": "pass"})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postRegister_negative({&quot;userName&quot;: &quot;user15&quot;,
+&quot;name&quot;: &quot;xyz&quot;,
+&quot;password&quot;: &quot;pass&quot;})">
+                  </a> <!-- test_postRegister_negative({"userName": "user15",
+"name": "xyz",
+"password": "pass"}) -->
+                  <span class="method-name">test_postRegister_negative</span>
+                  <span class="parameters">({"userName": "user15",
+"name": "xyz",
+"password": "pass"})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">in.stackRoute.RestAssured.WithoutAuthTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_AddBookToDB_WithoutAuth">
+                  </a> <!-- test_AddBookToDB_WithoutAuth -->
+                  <span class="method-name">test_AddBookToDB_WithoutAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_AddToFav_WithoutAuth">
+                  </a> <!-- test_AddToFav_WithoutAuth -->
+                  <span class="method-name">test_AddToFav_WithoutAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_RemoveFromFav_WithoutAuth">
+                  </a> <!-- test_RemoveFromFav_WithoutAuth -->
+                  <span class="method-name">test_RemoveFromFav_WithoutAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_getAllBooks_WithoutAuth">
+                  </a> <!-- test_getAllBooks_WithoutAuth -->
+                  <span class="method-name">test_getAllBooks_WithoutAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_getBookByID_WithoutAuth">
+                  </a> <!-- test_getBookByID_WithoutAuth -->
+                  <span class="method-name">test_getBookByID_WithoutAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_getFav_WithoutAuth">
+                  </a> <!-- test_getFav_WithoutAuth -->
+                  <span class="method-name">test_getFav_WithoutAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_getHomePage_WithoutAuth">
+                  </a> <!-- test_getHomePage_WithoutAuth -->
+                  <span class="method-name">test_getHomePage_WithoutAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">in.stackRoute.RestAssured.RestAssuredTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_AddToFavourite_withAuth">
+                  </a> <!-- test_AddToFavourite_withAuth -->
+                  <span class="method-name">test_AddToFavourite_withAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_RemoveFromFavourite_withAuth">
+                  </a> <!-- test_RemoveFromFavourite_withAuth -->
+                  <span class="method-name">test_RemoveFromFavourite_withAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_addBooksToDb_withAuth">
+                  </a> <!-- test_addBooksToDb_withAuth -->
+                  <span class="method-name">test_addBooksToDb_withAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_fav_withAuth">
+                  </a> <!-- test_fav_withAuth -->
+                  <span class="method-name">test_fav_withAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_getAllBooks_withAuth">
+                  </a> <!-- test_getAllBooks_withAuth -->
+                  <span class="method-name">test_getAllBooks_withAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_getBookById_withAuth">
+                  </a> <!-- test_getBookById_withAuth -->
+                  <span class="method-name">test_getBookById_withAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_getHomePage_withAuth">
+                  </a> <!-- test_getHomePage_withAuth -->
+                  <span class="method-name">test_getHomePage_withAuth</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postAuth_negative({
+  &quot;userName&quot; : &quot;user6&quot;,
+  &quot;password&quot; : &quot;WRONG_PASSWORD&quot;
+})">
+                  </a> <!-- test_postAuth_negative({
+  "userName" : "user6",
+  "password" : "WRONG_PASSWORD"
+}) -->
+                  <span class="method-name">test_postAuth_negative</span>
+                  <span class="parameters">({
+  "userName" : "user6",
+  "password" : "WRONG_PASSWORD"
+})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postAuth_negative({
+  &quot;userName&quot; : &quot;user100&quot;,
+  &quot;password&quot; : &quot;pass&quot;
+})">
+                  </a> <!-- test_postAuth_negative({
+  "userName" : "user100",
+  "password" : "pass"
+}) -->
+                  <span class="method-name">test_postAuth_negative</span>
+                  <span class="parameters">({
+  "userName" : "user100",
+  "password" : "pass"
+})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postAuth_negative({
+  &quot;userName&quot; : &quot;&quot;,
+  &quot;password&quot; : &quot;pass&quot;
+})">
+                  </a> <!-- test_postAuth_negative({
+  "userName" : "",
+  "password" : "pass"
+}) -->
+                  <span class="method-name">test_postAuth_negative</span>
+                  <span class="parameters">({
+  "userName" : "",
+  "password" : "pass"
+})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postAuth_negative({
+  &quot;userName&quot; : &quot;user6&quot;,
+  &quot;password&quot; : &quot;&quot;
+})">
+                  </a> <!-- test_postAuth_negative({
+  "userName" : "user6",
+  "password" : ""
+}) -->
+                  <span class="method-name">test_postAuth_negative</span>
+                  <span class="parameters">({
+  "userName" : "user6",
+  "password" : ""
+})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postAuth_negative({
+  &quot;userName&quot; : &quot;&quot;,
+  &quot;password&quot; : &quot;&quot;
+})">
+                  </a> <!-- test_postAuth_negative({
+  "userName" : "",
+  "password" : ""
+}) -->
+                  <span class="method-name">test_postAuth_negative</span>
+                  <span class="parameters">({
+  "userName" : "",
+  "password" : ""
+})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_postAuth_positive({
+  &quot;userName&quot; : &quot;user6&quot;,
+  &quot;password&quot; : &quot;pass&quot;
+})">
+                  </a> <!-- test_postAuth_positive({
+  "userName" : "user6",
+  "password" : "pass"
+}) -->
+                  <span class="method-name">test_postAuth_positive</span>
+                  <span class="parameters">({
+  "userName" : "user6",
+  "password" : "pass"
+})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/tmp/testng-eclipse--917396244/testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;in.stackRoute.food.repository.UserRepository&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.model.BookModelTest&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.model.Favourite&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.model.UserModelTest&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.util.JwtUtil&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.service.UserService&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.RestAssured.RegisterRestTest&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.service.UserServiceTest&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.RestAssured.WithoutAuthTest&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.FoodDeliveryApplicationTests&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.service.BookServiceTest&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.repository.BookRepository&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.service.BookService&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.FoodDeliveryApplication&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.controller.AuthController&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.config.SecurityConfig&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.model.FavouriteModelTest&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.repository.FavouriteRepository&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.model.Auth&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.service.CustomUserDetailsService&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.model.Book&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.filter.JwtFilter&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.controller.AuthControllerTest&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.model.BookApiModel&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.RestAssured.RestAssuredTest&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.model.User&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.service.FavouriteServiceTest&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.ServletInitializer&quot;/&gt;
+      &lt;class name=&quot;in.stackRoute.food.service.FavouriteService&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (29 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(26);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'test_postRegister_negative')
+data.setCell(0, 2, 'in.stackRoute.RestAssured.RegisterRestTest')
+data.setCell(0, 3, 2718);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'test_addBooksToDb_withAuth')
+data.setCell(1, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(1, 3, 1783);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'test_postAuth_negative')
+data.setCell(2, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(2, 3, 721);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'test_getHomePage_withAuth')
+data.setCell(3, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(3, 3, 101);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'test_postAuth_negative')
+data.setCell(4, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(4, 3, 73);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'test_postAuth_negative')
+data.setCell(5, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(5, 3, 62);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'test_postAuth_negative')
+data.setCell(6, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(6, 3, 62);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'test_postAuth_negative')
+data.setCell(7, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(7, 3, 54);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'test_getBookById_withAuth')
+data.setCell(8, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(8, 3, 54);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'test_getAllBooks_withAuth')
+data.setCell(9, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(9, 3, 50);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'test_AddToFavourite_withAuth')
+data.setCell(10, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(10, 3, 49);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'test_postRegister_negative')
+data.setCell(11, 2, 'in.stackRoute.RestAssured.RegisterRestTest')
+data.setCell(11, 3, 43);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'test_RemoveFromFavourite_withAuth')
+data.setCell(12, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(12, 3, 42);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'test_RemoveFromFav_WithoutAuth')
+data.setCell(13, 2, 'in.stackRoute.RestAssured.WithoutAuthTest')
+data.setCell(13, 3, 37);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'test_postRegister_negative')
+data.setCell(14, 2, 'in.stackRoute.RestAssured.RegisterRestTest')
+data.setCell(14, 3, 35);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'test_postRegister_negative')
+data.setCell(15, 2, 'in.stackRoute.RestAssured.RegisterRestTest')
+data.setCell(15, 3, 35);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'test_AddToFav_WithoutAuth')
+data.setCell(16, 2, 'in.stackRoute.RestAssured.WithoutAuthTest')
+data.setCell(16, 3, 34);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'test_postRegister_negative')
+data.setCell(17, 2, 'in.stackRoute.RestAssured.RegisterRestTest')
+data.setCell(17, 3, 33);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'test_postRegister_negative')
+data.setCell(18, 2, 'in.stackRoute.RestAssured.RegisterRestTest')
+data.setCell(18, 3, 31);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'test_AddBookToDB_WithoutAuth')
+data.setCell(19, 2, 'in.stackRoute.RestAssured.WithoutAuthTest')
+data.setCell(19, 3, 30);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'test_postAuth_positive')
+data.setCell(20, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(20, 3, 29);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'test_fav_withAuth')
+data.setCell(21, 2, 'in.stackRoute.RestAssured.RestAssuredTest')
+data.setCell(21, 3, 27);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'test_getAllBooks_WithoutAuth')
+data.setCell(22, 2, 'in.stackRoute.RestAssured.WithoutAuthTest')
+data.setCell(22, 3, 27);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'test_getBookByID_WithoutAuth')
+data.setCell(23, 2, 'in.stackRoute.RestAssured.WithoutAuthTest')
+data.setCell(23, 3, 24);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'test_getFav_WithoutAuth')
+data.setCell(24, 2, 'in.stackRoute.RestAssured.WithoutAuthTest')
+data.setCell(24, 3, 22);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'test_getHomePage_WithoutAuth')
+data.setCell(25, 2, 'in.stackRoute.RestAssured.WithoutAuthTest')
+data.setCell(25, 3, 20);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">in.stackRoute.RestAssured.RegisterRestTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">test_postRegister_negative({"userName": "user13",
+"name": "xyz",
+"email": "user13@gmail.com",
+"password": "pass"})</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_postRegister_negative({"userName": "user13",
+"name": "xyz",
+"email": "user14@gmail.com",
+"password": "pass"})</span>
+                <span class="method-start">2723 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_postRegister_negative({"userName": "user14",
+"name": "xyz",
+"email": "user13@gmail.com",
+"password": "pass"})</span>
+                <span class="method-start">2760 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_postRegister_negative({"name": "xyz",
+"email": "user15@gmail.com",
+"password": "pass"})</span>
+                <span class="method-start">2792 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_postRegister_negative({"userName": "user15",
+"name": "xyz",
+"password": "pass"})</span>
+                <span class="method-start">2829 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_postRegister_negative({"userName": "user16",
+"name": "xyz",
+"email": "user16@gmail.com"})</span>
+                <span class="method-start">2865 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">in.stackRoute.RestAssured.WithoutAuthTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">test_AddBookToDB_WithoutAuth</span>
+                <span class="method-start">2916 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_AddToFav_WithoutAuth</span>
+                <span class="method-start">2948 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_RemoveFromFav_WithoutAuth</span>
+                <span class="method-start">2984 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_getAllBooks_WithoutAuth</span>
+                <span class="method-start">3023 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_getBookByID_WithoutAuth</span>
+                <span class="method-start">3053 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_getFav_WithoutAuth</span>
+                <span class="method-start">3080 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_getHomePage_WithoutAuth</span>
+                <span class="method-start">3104 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">in.stackRoute.RestAssured.RestAssuredTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">test_postAuth_positive({
+  "userName" : "user6",
+  "password" : "pass"
+})</span>
+                <span class="method-start">3127 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_postAuth_negative({
+  "userName" : "",
+  "password" : "pass"
+})</span>
+                <span class="method-start">3158 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_postAuth_negative({
+  "userName" : "user6",
+  "password" : ""
+})</span>
+                <span class="method-start">3880 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_postAuth_negative({
+  "userName" : "",
+  "password" : ""
+})</span>
+                <span class="method-start">3955 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_postAuth_negative({
+  "userName" : "user6",
+  "password" : "WRONG_PASSWORD"
+})</span>
+                <span class="method-start">4018 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_postAuth_negative({
+  "userName" : "user100",
+  "password" : "pass"
+})</span>
+                <span class="method-start">4073 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_getHomePage_withAuth</span>
+                <span class="method-start">4138 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_getBookById_withAuth</span>
+                <span class="method-start">4241 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_getAllBooks_withAuth</span>
+                <span class="method-start">4296 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_RemoveFromFavourite_withAuth</span>
+                <span class="method-start">4348 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_AddToFavourite_withAuth</span>
+                <span class="method-start">4392 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_addBooksToDb_withAuth</span>
+                <span class="method-start">4443 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_fav_withAuth</span>
+                <span class="method-start">6228 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

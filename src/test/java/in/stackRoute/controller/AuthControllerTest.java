@@ -72,15 +72,18 @@ class AuthControllerTest {
 		@MockBean	
 		private AuthenticationManager authenticationManager;
 
+		String bearerToken = "";
 
 
 	@Before 
 	public void setUp() throws Exception { 
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+		bearerToken ="eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNiIsImV4cCI6MTYyMTM1MzIwNCwiaWF0IjoxNjIxMzE3MjA0fQ.7Tna-Z9MnHbwD2HWWwdhgySHSN35lQr-uUq4pIHsF9E";
 	}
-	String bearerToken =
 
-"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMjAwIiwiZXhwIjoxNjIxMjY4NzA2LCJpYXQiOjE2MjEyMzI3MDZ9.Ywu7vjtXfTgJzKm7dhsbjwOwDh6pmkjTFuA9S92wnpE";
+	//String bearerToken =
+
+//"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMjAwIiwiZXhwIjoxNjIxMjY4NzA2LCJpYXQiOjE2MjEyMzI3MDZ9.Ywu7vjtXfTgJzKm7dhsbjwOwDh6pmkjTFuA9S92wnpE";
 	@Test
 	void testGetBookByID() throws Exception{
 		mockMvc.perform(MockMvcRequestBuilders.get("/getBook/1")
