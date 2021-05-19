@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,7 +36,7 @@ import in.stackRoute.food.service.BookService;
 import in.stackRoute.food.service.FavouriteService;
 import in.stackRoute.food.service.UserService;
 import in.stackRoute.food.util.JwtUtil;
-
+@CrossOrigin
 @RestController
 public class AuthController {
 	String token="";

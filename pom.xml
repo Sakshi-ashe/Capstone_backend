@@ -75,6 +75,22 @@
 			<version>2.0.3</version>
 			<scope>test</scope>
 		</dependency>
+		
+				<dependency>
+		    <groupId>io.rest-assured</groupId>
+		    <artifactId>rest-assured</artifactId>
+		    <version>3.0.2</version>
+		    <scope>test</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+		    <groupId>org.testng</groupId>
+		    <artifactId>testng</artifactId>
+		    <version>7.3.0</version>
+		    <scope>test</scope>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
