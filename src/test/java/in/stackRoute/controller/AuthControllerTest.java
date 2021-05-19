@@ -86,7 +86,6 @@ class AuthControllerTest {
 	//this test was not working so i commented it
 	@Test
 	void testGetBookByID() throws Exception{
-		//make a book object here now run ok abhi ye tstcase addd ni hua ek bar dobara kholti hu sts any ki jgh anyInt?
     	Book mockBook = new Book(502,"xyz","xyz","xyz","xyz");
     	
     	Mockito.when(bookService.getBookByID(1)).thenReturn(mockBook);

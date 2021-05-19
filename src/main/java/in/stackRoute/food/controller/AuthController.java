@@ -31,6 +31,7 @@ import in.stackRoute.food.model.Auth;
 import in.stackRoute.food.model.Book;
 import in.stackRoute.food.model.BookApiModel;
 import in.stackRoute.food.model.Favourite;
+import in.stackRoute.food.model.Response;
 import in.stackRoute.food.model.User;
 import in.stackRoute.food.service.BookService;
 import in.stackRoute.food.service.FavouriteService;
@@ -42,7 +43,7 @@ public class AuthController {
 	String token="";
 	 @Value("${api.key}")
 	 private String apiKey;
-
+	 
     @Autowired
     private RestTemplate restTemplate;
 
@@ -69,7 +70,7 @@ public class AuthController {
 	}
 	
 	@PostMapping("/authentication")//generating token
-	public String generateToken(@RequestBody Auth auth) throws Exception {
+	public Response generateToken(@RequestBody Auth auth) throws Exception {
 		  try {
 	            authenticationManager.authenticate(
 	                    new UsernamePasswordAuthenticationToken(auth.getUserName(), auth.getPassword())
@@ -81,7 +82,7 @@ public class AuthController {
 	        }
 	        token= jwtUtil.generateToken(auth.getUserName());
 	        System.out.println(token);
-	        return token;
+	        return new Response(token);
 	    }
 	
 	
@@ -128,7 +129,7 @@ public ResponseEntity<?> addToFavourite(@PathVariable int book_id, @RequestHeade
 	User u=userService.getUserByName(username);
 
 	if(fService.contains(book,u)!=null) {
-		return new ResponseEntity<String>("already added",HttpStatus.CONFLICT);
+		return new ResponseEntity<Response>(new Response("already added"),HttpStatus.CONFLICT);
 	}
 	
 	Favourite fav=fService.save(u, book);
@@ -151,10 +152,10 @@ public ResponseEntity<?> removeFromFavourite(@PathVariable int book_id, @Request
 	if(f!=null)
 	 {
 		fService.remove(f);
-		return new ResponseEntity<String>("deleted",HttpStatus.OK);
+		return new ResponseEntity<Response>(new Response("deleted"),HttpStatus.OK);
 	}
 	
-		return new ResponseEntity<String>("Not found",HttpStatus.NOT_FOUND);
+		return new ResponseEntity<Response>(new Response("Not found"),HttpStatus.NOT_FOUND);
     
     
     }
@@ -168,12 +169,12 @@ public ResponseEntity<?> removeFromFavourite(@PathVariable int book_id, @Request
 		      //  bookApiModel= new BookApiModel(bookApiModel.getStatus(),bookApiModel.getCopyright(),bookApiModel.getNum_results(),bookApiModel.getResults());
 		        
 		  bService.save(bookApiModel.getResults());
-				return new ResponseEntity<String>("ADDED",HttpStatus.CREATED);
+				return new ResponseEntity<Response>(new Response("ADDED"),HttpStatus.CREATED);
 		    
 		    
 		    }
 
-@PostMapping("/register")
+@PostMapping(path="/register",produces = "application/json")
 public ResponseEntity<?> createUser(@RequestBody ObjectNode objectNode ) {
 
 
@@ -183,21 +184,22 @@ public ResponseEntity<?> createUser(@RequestBody ObjectNode objectNode ) {
 	if(objectNode.get("userName")!=null)
 		{
 			if(userService.matchUserName(objectNode.get("userName").asText())) {
-			    return new ResponseEntity<>("Username already exists!",HttpStatus.CONFLICT);
+				Response r=new Response("Username already exists!");
+			    return new ResponseEntity<Response>(r,HttpStatus.CONFLICT);
 			}
 			user.setUserName(objectNode.get("userName").asText());
 
 		}
 
 	else
-	    return new ResponseEntity<>("Please enter username!",HttpStatus.CONFLICT);
+	    return new ResponseEntity<Response>(new Response("Please enter username!"),HttpStatus.CONFLICT);
 
 
     //password
 	if(objectNode.get("password")!=null)
 		user.setPassword(objectNode.get("password").asText());
 	else
-	    return new ResponseEntity<>("Please enter password!",HttpStatus.CONFLICT);
+	    return new ResponseEntity<Response>(new Response("Please enter password!"),HttpStatus.CONFLICT);
 	    
 	    
 	    
@@ -205,14 +207,14 @@ public ResponseEntity<?> createUser(@RequestBody ObjectNode objectNode ) {
 	if(objectNode.get("email")!=null) {
 
 		if(userService.matchEmail(objectNode.get("email").asText())) {
-		    return new ResponseEntity<>("email already exists!",HttpStatus.CONFLICT);
+		    return new ResponseEntity<Response>(new Response("email already exists!"),HttpStatus.CONFLICT);
 		}
 		user.setEmail(objectNode.get("email").asText());
 
 
 	}
 	else
-	    return new ResponseEntity<>("Please enter email!",HttpStatus.CONFLICT);
+	    return new ResponseEntity<Response>(new Response("Please enter email!"),HttpStatus.CONFLICT);
 	    
 	    
 	    
