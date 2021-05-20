@@ -5,7 +5,7 @@
     <classes>
       <class name="in.stackRoute.RestAssured.RestAssuredTest">
         <methods>
-          <include name="test_getAllBooks_withAuth"/>
+          <include name="test_addBooksToDb_withAuth"/>
         </methods>
       </class> <!-- in.stackRoute.RestAssured.RestAssuredTest -->
     </classes>

@@ -72,7 +72,7 @@ public class RegisterRestTest {
 				.then()
 					.assertThat()
 					.statusCode(409)
-			         .contentType(ContentType.TEXT)
+			         .contentType(ContentType.JSON)
 					.log().body()
 					.extract().response();
 		

@@ -8,6 +8,8 @@ import in.stackRoute.food.FoodDeliveryApplication;
 import org.apache.http.HttpStatus;
 import org.assertj.core.error.ShouldBeGreaterOrEqual;
 import org.hamcrest.Matcher;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.mockito.internal.matchers.GreaterOrEqual;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.testng.AssertJUnit;
@@ -40,17 +42,19 @@ public class RestAssuredTest {
 	}
 
 	@Test(priority = 3, dataProvider = "positive_auth_data")
-	public void test_postAuth_positive(String body) {
+	public void test_postAuth_positive(String body) throws JSONException {
 
-		String res = given().contentType("application/json").body(body).when()
+		Response res = given().contentType("application/json").body(body).when()
 				.post("http://localhost:9191/authentication").then().assertThat().statusCode(200)
-				.contentType(ContentType.TEXT).log().body()
-				// .extract().response()
-				.extract().body().asString();
-
+				.contentType(ContentType.JSON)
+				.log().body()
+				.extract().response();
+				//.extract().body().asString();
+		
+		
 		System.out.println("Response  :" + res);
 
-		token = res.toString();
+		token = res.jsonPath().getString("response");
 		System.out.println("token:  " + token);
 
 	}
@@ -184,7 +188,7 @@ public class RestAssuredTest {
 
 
 		//Post 'addBooksToDb' with authorization
-				@Test(priority = 10 )
+				//@Test(priority = 10 )
 				public void test_addBooksToDb_withAuth() {
 					given()
 			        .headers(

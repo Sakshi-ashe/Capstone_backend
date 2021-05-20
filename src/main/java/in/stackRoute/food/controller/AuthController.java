@@ -37,6 +37,7 @@ import in.stackRoute.food.service.BookService;
 import in.stackRoute.food.service.FavouriteService;
 import in.stackRoute.food.service.UserService;
 import in.stackRoute.food.util.JwtUtil;
+
 @CrossOrigin
 @RestController
 public class AuthController {
