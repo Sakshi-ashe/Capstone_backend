@@ -91,7 +91,9 @@ class AuthControllerTest {
 		@MockBean	
 		private AuthenticationManager authenticationManager;
 
-		String bearerToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWtzaGkiLCJleHAiOjE2MjE3OTA5MzUsImlhdCI6MTYyMTc1NDkzNX0.N1boa-_oi-WZfNHSgb2aRE5OVYvSE4IA5avA3Ha0rns";
+
+		String bearerToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNTAwIiwiZXhwIjoxNjIxODE0MTY2LCJpYXQiOjE2MjE3NzgxNjZ9.CZ4gYu9PXfPLhjzS9_LKNCpLh0pJIiE8dMCn0wLlCck";
+				//"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWtzaGkiLCJleHAiOjE2MjE3OTA5MzUsImlhdCI6MTYyMTc1NDkzNX0.N1boa-_oi-WZfNHSgb2aRE5OVYvSE4IA5avA3Ha0rns";
 		@Mock
 		AuthController authController;
 		
@@ -104,7 +106,8 @@ class AuthControllerTest {
 		bearerToken=jwtUtil.generateToken("user100");
 			}
 	
-	 @Test void testAuthentication() throws Exception {
+	 @Test 
+	 void testAuthentication() throws Exception {
 		 System.out.println("tokennn"+jwtUtil.generateToken("user100"));
 		  Auth auth=new Auth("sakshi","sakhi");
 		System.out.println("purviresult");

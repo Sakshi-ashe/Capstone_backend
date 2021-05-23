@@ -78,6 +78,7 @@ public class AuthController {
 	            );
 	        } catch (Exception ex) {
 	        	System.out.println("invalid credentials");
+	        	System.out.println(auth.getUserName());
 	            throw new Exception("inavalid username/password");
 	            
 	        }

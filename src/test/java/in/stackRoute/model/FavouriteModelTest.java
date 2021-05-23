@@ -44,9 +44,9 @@ import in.stackRoute.food.service.UserService;
 import in.stackRoute.food.util.JwtUtil;
 
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes=FoodDeliveryApplication.class)
-@AutoConfigureMockMvc
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(classes=FoodDeliveryApplication.class)
+//@AutoConfigureMockMvc
 class FavouriteModelTest {
 	
 	
