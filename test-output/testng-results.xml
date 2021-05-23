@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="25" passed="25" failed="0" skipped="0">
+<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-21T01:13:07 IST" name="Default suite" finished-at="2021-05-21T01:13:11 IST" duration-ms="3699">
+  <suite started-at="2021-05-23T15:40:21 IST" name="Default suite" finished-at="2021-05-23T15:40:24 IST" duration-ms="3047">
     <groups>
     </groups>
-    <test started-at="2021-05-21T01:13:07 IST" name="Default test" finished-at="2021-05-21T01:13:11 IST" duration-ms="3699">
+    <test started-at="2021-05-23T15:40:21 IST" name="Default test" finished-at="2021-05-23T15:40:24 IST" duration-ms="3047">
       <class name="in.stackRoute.RestAssured.RestAssuredTest">
-        <test-method signature="test_postAuth_positive(java.lang.String)[pri:3, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:10 IST" name="test_postAuth_positive" data-provider="positive_auth_data" finished-at="2021-05-21T01:13:10 IST" duration-ms="368" status="PASS">
+        <test-method signature="test_postAuth_positive(java.lang.String)[pri:3, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:21 IST" name="test_postAuth_positive" data-provider="positive_auth_data" finished-at="2021-05-23T15:40:23 IST" duration-ms="2011" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[{
-  "userName" : "user6",
+  "userName" : "user22",
   "password" : "pass"
 }]]>
               </value>
@@ -21,7 +21,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_postAuth_positive -->
-        <test-method signature="test_postAuth_negative(java.lang.String)[pri:4, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:10 IST" name="test_postAuth_negative" data-provider="negtive_auth_data" finished-at="2021-05-21T01:13:10 IST" duration-ms="127" status="PASS">
+        <test-method signature="test_postAuth_negative(java.lang.String)[pri:4, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:23 IST" name="test_postAuth_negative" data-provider="negtive_auth_data" finished-at="2021-05-23T15:40:23 IST" duration-ms="135" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -35,7 +35,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_postAuth_negative -->
-        <test-method signature="test_postAuth_negative(java.lang.String)[pri:4, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:10 IST" name="test_postAuth_negative" data-provider="negtive_auth_data" finished-at="2021-05-21T01:13:10 IST" duration-ms="80" status="PASS">
+        <test-method signature="test_postAuth_negative(java.lang.String)[pri:4, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:23 IST" name="test_postAuth_negative" data-provider="negtive_auth_data" finished-at="2021-05-23T15:40:23 IST" duration-ms="72" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -49,7 +49,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_postAuth_negative -->
-        <test-method signature="test_postAuth_negative(java.lang.String)[pri:4, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:10 IST" name="test_postAuth_negative" data-provider="negtive_auth_data" finished-at="2021-05-21T01:13:11 IST" duration-ms="46" status="PASS">
+        <test-method signature="test_postAuth_negative(java.lang.String)[pri:4, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:23 IST" name="test_postAuth_negative" data-provider="negtive_auth_data" finished-at="2021-05-23T15:40:23 IST" duration-ms="59" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -63,7 +63,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_postAuth_negative -->
-        <test-method signature="test_postAuth_negative(java.lang.String)[pri:4, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:11 IST" name="test_postAuth_negative" data-provider="negtive_auth_data" finished-at="2021-05-21T01:13:11 IST" duration-ms="55" status="PASS">
+        <test-method signature="test_postAuth_negative(java.lang.String)[pri:4, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:23 IST" name="test_postAuth_negative" data-provider="negtive_auth_data" finished-at="2021-05-23T15:40:23 IST" duration-ms="60" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -77,12 +77,12 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_postAuth_negative -->
-        <test-method signature="test_postAuth_negative(java.lang.String)[pri:4, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:11 IST" name="test_postAuth_negative" data-provider="negtive_auth_data" finished-at="2021-05-21T01:13:11 IST" duration-ms="57" status="PASS">
+        <test-method signature="test_postAuth_negative(java.lang.String)[pri:4, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:23 IST" name="test_postAuth_negative" data-provider="negtive_auth_data" finished-at="2021-05-23T15:40:23 IST" duration-ms="64" status="PASS">
           <params>
             <param index="0">
               <value>
                 <![CDATA[{
-  "userName" : "user100",
+  "userName" : "user1000",
   "password" : "pass"
 }]]>
               </value>
@@ -91,144 +91,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_postAuth_negative -->
-        <test-method signature="test_getHomePage_withAuth()[pri:5, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:11 IST" name="test_getHomePage_withAuth" finished-at="2021-05-21T01:13:11 IST" duration-ms="127" status="PASS">
+        <test-method signature="test_getHomePage_withAuth()[pri:5, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:23 IST" name="test_getHomePage_withAuth" finished-at="2021-05-23T15:40:23 IST" duration-ms="181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_getHomePage_withAuth -->
-        <test-method signature="test_getBookById_withAuth()[pri:6, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:11 IST" name="test_getBookById_withAuth" finished-at="2021-05-21T01:13:11 IST" duration-ms="62" status="PASS">
+        <test-method signature="test_getBookById_withAuth()[pri:6, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:23 IST" name="test_getBookById_withAuth" finished-at="2021-05-23T15:40:23 IST" duration-ms="105" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_getBookById_withAuth -->
-        <test-method signature="test_getAllBooks_withAuth()[pri:7, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:11 IST" name="test_getAllBooks_withAuth" finished-at="2021-05-21T01:13:11 IST" duration-ms="92" status="PASS">
+        <test-method signature="test_getAllBooks_withAuth()[pri:7, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:23 IST" name="test_getAllBooks_withAuth" finished-at="2021-05-23T15:40:24 IST" duration-ms="49" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_getAllBooks_withAuth -->
-        <test-method signature="test_RemoveFromFavourite_withAuth()[pri:8, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:11 IST" name="test_RemoveFromFavourite_withAuth" finished-at="2021-05-21T01:13:11 IST" duration-ms="42" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_RemoveFromFavourite_withAuth -->
-        <test-method signature="test_AddToFavourite_withAuth()[pri:9, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:11 IST" name="test_AddToFavourite_withAuth" finished-at="2021-05-21T01:13:11 IST" duration-ms="56" status="PASS">
+        <test-method signature="test_AddToFavourite_withAuth()[pri:8, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:24 IST" name="test_AddToFavourite_withAuth" finished-at="2021-05-23T15:40:24 IST" duration-ms="146" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_AddToFavourite_withAuth -->
-        <test-method signature="test_fav_withAuth()[pri:11, instance:in.stackRoute.RestAssured.RestAssuredTest@3576ddc2]" started-at="2021-05-21T01:13:11 IST" name="test_fav_withAuth" finished-at="2021-05-21T01:13:11 IST" duration-ms="36" status="PASS">
+        <test-method signature="test_RemoveFromFavourite_withAuth()[pri:9, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:24 IST" name="test_RemoveFromFavourite_withAuth" finished-at="2021-05-23T15:40:24 IST" duration-ms="63" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_RemoveFromFavourite_withAuth -->
+        <test-method signature="test_fav_withAuth()[pri:11, instance:in.stackRoute.RestAssured.RestAssuredTest@1de76cc7]" started-at="2021-05-23T15:40:24 IST" name="test_fav_withAuth" finished-at="2021-05-23T15:40:24 IST" duration-ms="40" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_fav_withAuth -->
       </class> <!-- in.stackRoute.RestAssured.RestAssuredTest -->
-      <class name="in.stackRoute.RestAssured.WithoutAuthTest">
-        <test-method signature="test_AddBookToDB_WithoutAuth()[pri:0, instance:in.stackRoute.RestAssured.WithoutAuthTest@264f218]" started-at="2021-05-21T01:13:10 IST" name="test_AddBookToDB_WithoutAuth" finished-at="2021-05-21T01:13:10 IST" duration-ms="29" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_AddBookToDB_WithoutAuth -->
-        <test-method signature="test_AddToFav_WithoutAuth()[pri:0, instance:in.stackRoute.RestAssured.WithoutAuthTest@264f218]" started-at="2021-05-21T01:13:10 IST" name="test_AddToFav_WithoutAuth" finished-at="2021-05-21T01:13:10 IST" duration-ms="32" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_AddToFav_WithoutAuth -->
-        <test-method signature="test_RemoveFromFav_WithoutAuth()[pri:0, instance:in.stackRoute.RestAssured.WithoutAuthTest@264f218]" started-at="2021-05-21T01:13:10 IST" name="test_RemoveFromFav_WithoutAuth" finished-at="2021-05-21T01:13:10 IST" duration-ms="38" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_RemoveFromFav_WithoutAuth -->
-        <test-method signature="test_getAllBooks_WithoutAuth()[pri:0, instance:in.stackRoute.RestAssured.WithoutAuthTest@264f218]" started-at="2021-05-21T01:13:10 IST" name="test_getAllBooks_WithoutAuth" finished-at="2021-05-21T01:13:10 IST" duration-ms="24" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_getAllBooks_WithoutAuth -->
-        <test-method signature="test_getBookByID_WithoutAuth()[pri:0, instance:in.stackRoute.RestAssured.WithoutAuthTest@264f218]" started-at="2021-05-21T01:13:10 IST" name="test_getBookByID_WithoutAuth" finished-at="2021-05-21T01:13:10 IST" duration-ms="24" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_getBookByID_WithoutAuth -->
-        <test-method signature="test_getFav_WithoutAuth()[pri:0, instance:in.stackRoute.RestAssured.WithoutAuthTest@264f218]" started-at="2021-05-21T01:13:10 IST" name="test_getFav_WithoutAuth" finished-at="2021-05-21T01:13:10 IST" duration-ms="15" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_getFav_WithoutAuth -->
-        <test-method signature="test_getHomePage_WithoutAuth()[pri:0, instance:in.stackRoute.RestAssured.WithoutAuthTest@264f218]" started-at="2021-05-21T01:13:10 IST" name="test_getHomePage_WithoutAuth" finished-at="2021-05-21T01:13:10 IST" duration-ms="17" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_getHomePage_WithoutAuth -->
-      </class> <!-- in.stackRoute.RestAssured.WithoutAuthTest -->
-      <class name="in.stackRoute.RestAssured.RegisterRestTest">
-        <test-method signature="test_postRegister_negative(java.lang.String)[pri:2, instance:in.stackRoute.RestAssured.RegisterRestTest@4c5ae43b]" started-at="2021-05-21T01:13:07 IST" name="test_postRegister_negative" data-provider="negative_register_data" finished-at="2021-05-21T01:13:09 IST" duration-ms="2096" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{"userName": "user13",
-"name": "xyz",
-"email": "user13@gmail.com",
-"password": "pass"}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_postRegister_negative -->
-        <test-method signature="test_postRegister_negative(java.lang.String)[pri:2, instance:in.stackRoute.RestAssured.RegisterRestTest@4c5ae43b]" started-at="2021-05-21T01:13:09 IST" name="test_postRegister_negative" data-provider="negative_register_data" finished-at="2021-05-21T01:13:10 IST" duration-ms="39" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{"userName": "user13",
-"name": "xyz",
-"email": "user14@gmail.com",
-"password": "pass"}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_postRegister_negative -->
-        <test-method signature="test_postRegister_negative(java.lang.String)[pri:2, instance:in.stackRoute.RestAssured.RegisterRestTest@4c5ae43b]" started-at="2021-05-21T01:13:10 IST" name="test_postRegister_negative" data-provider="negative_register_data" finished-at="2021-05-21T01:13:10 IST" duration-ms="33" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{"userName": "user14",
-"name": "xyz",
-"email": "user13@gmail.com",
-"password": "pass"}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_postRegister_negative -->
-        <test-method signature="test_postRegister_negative(java.lang.String)[pri:2, instance:in.stackRoute.RestAssured.RegisterRestTest@4c5ae43b]" started-at="2021-05-21T01:13:10 IST" name="test_postRegister_negative" data-provider="negative_register_data" finished-at="2021-05-21T01:13:10 IST" duration-ms="37" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{"name": "xyz",
-"email": "user15@gmail.com",
-"password": "pass"}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_postRegister_negative -->
-        <test-method signature="test_postRegister_negative(java.lang.String)[pri:2, instance:in.stackRoute.RestAssured.RegisterRestTest@4c5ae43b]" started-at="2021-05-21T01:13:10 IST" name="test_postRegister_negative" data-provider="negative_register_data" finished-at="2021-05-21T01:13:10 IST" duration-ms="29" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{"userName": "user15",
-"name": "xyz",
-"password": "pass"}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_postRegister_negative -->
-        <test-method signature="test_postRegister_negative(java.lang.String)[pri:2, instance:in.stackRoute.RestAssured.RegisterRestTest@4c5ae43b]" started-at="2021-05-21T01:13:10 IST" name="test_postRegister_negative" data-provider="negative_register_data" finished-at="2021-05-21T01:13:10 IST" duration-ms="41" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{"userName": "user16",
-"name": "xyz",
-"email": "user16@gmail.com"}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_postRegister_negative -->
-      </class> <!-- in.stackRoute.RestAssured.RegisterRestTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

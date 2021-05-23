@@ -2,7 +2,10 @@ package in.stackRoute.RestAssured;
 
 import static io.restassured.RestAssured.given;
 
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -10,7 +13,9 @@ import in.stackRoute.food.FoodDeliveryApplication;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes=FoodDeliveryApplication.class)
+
 public class RegisterRestTest {
 
 	@DataProvider(name="positive_register_data")

@@ -5,7 +5,14 @@
     <classes>
       <class name="in.stackRoute.RestAssured.RestAssuredTest">
         <methods>
-          <include name="test_addBooksToDb_withAuth"/>
+          <include name="test_postAuth_positive" invocation-numbers="0"/>
+          <include name="test_AddToFavourite_withAuth"/>
+          <include name="test_fav_withAuth"/>
+          <include name="test_getHomePage_withAuth"/>
+          <include name="test_postAuth_negative" invocation-numbers="0 1 2 3 4"/>
+          <include name="test_getAllBooks_withAuth"/>
+          <include name="test_getBookById_withAuth"/>
+          <include name="test_RemoveFromFavourite_withAuth"/>
         </methods>
       </class> <!-- in.stackRoute.RestAssured.RestAssuredTest -->
     </classes>

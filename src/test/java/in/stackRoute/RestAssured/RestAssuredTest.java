@@ -10,8 +10,11 @@ import org.assertj.core.error.ShouldBeGreaterOrEqual;
 import org.hamcrest.Matcher;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.junit.runner.RunWith;
 import org.mockito.internal.matchers.GreaterOrEqual;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -27,7 +30,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 
 import java.util.HashMap;
 
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes=FoodDeliveryApplication.class)
+
 public class RestAssuredTest {
 	
 	String token ="";
@@ -37,7 +42,8 @@ public class RestAssuredTest {
 	@DataProvider(name="positive_auth_data")
 	public String[] pos_auth() {
 		return new String[] {
-					"{\r\n  \"userName\" : \"user6\",\r\n  \"password\" : \"pass\"\r\n}"
+					"{\r\n  \"userName\" : \"user22\",\r\n  \"password\" : \"pass\"\r\n}"
+				
 		};
 	}
 
@@ -68,7 +74,7 @@ public class RestAssuredTest {
 					"{\r\n  \"userName\" : \"user6\",\r\n  \"password\" : \"\"\r\n}",
 					"{\r\n  \"userName\" : \"\",\r\n  \"password\" : \"\"\r\n}",
 					"{\r\n  \"userName\" : \"user6\",\r\n  \"password\" : \"WRONG_PASSWORD\"\r\n}",
-					"{\r\n  \"userName\" : \"user100\",\r\n  \"password\" : \"pass\"\r\n}"
+					"{\r\n  \"userName\" : \"user1000\",\r\n  \"password\" : \"pass\"\r\n}"
 
 		};
 	}
@@ -152,26 +158,12 @@ public class RestAssuredTest {
 	
 	
 	
-	//Get 'RemoveFromFavourite' with authorization
-			@Test(priority = 8)
-			public void test_RemoveFromFavourite_withAuth() {
-				given()
-		        .headers(
-		                "Authorization",
-		                "Bearer " + token
-		                )
-		        	.when()
-						.delete("http://localhost:9191/RemoveFromFavourite/10")
-					.then()
-						.assertThat()
-						.statusCode(200);
-						
-			}
+	
 
 
 	
 	//Get 'AddToFavourite' with authorization
-		@Test(priority = 9)
+		@Test(priority = 8)
 		public void test_AddToFavourite_withAuth() {
 			given()
 	        .headers(
@@ -179,10 +171,26 @@ public class RestAssuredTest {
 	                "Bearer " + token
 	                )
 	        	.when()
-					.post("http://localhost:9191/AddToFavourite/10")
+					.post("http://localhost:9191/AddToFavourite/11")
 				.then()
 					.assertThat()
 					.statusCode(201);
+					
+		}
+		
+		//Get 'RemoveFromFavourite' with authorization
+		@Test(priority = 9)
+		public void test_RemoveFromFavourite_withAuth() {
+			given()
+	        .headers(
+	                "Authorization",
+	                "Bearer " + token
+	                )
+	        	.when()
+					.delete("http://localhost:9191/RemoveFromFavourite/11")
+				.then()
+					.assertThat()
+					.statusCode(200);
 					
 		}
 
