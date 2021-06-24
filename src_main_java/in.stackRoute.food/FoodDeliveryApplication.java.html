@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>FoodDeliveryApplication.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">capstoneproject (24-May-2021 1:03:16 pm)</a> &gt; <a href="../../index.html" class="el_group">capstoneproject</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">in.stackRoute.food</a> &gt; <span class="el_source">FoodDeliveryApplication.java</span></div><h1>FoodDeliveryApplication.java</h1><pre class="source lang-java linenums">package in.stackRoute.food;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
+
+import in.stackRoute.food.model.User;
+import in.stackRoute.food.repository.UserRepository;
+
+@SpringBootApplication
+<span class="fc" id="L18">public class FoodDeliveryApplication {</span>
+	 @Autowired
+	    private UserRepository repository;
+
+		/*
+		 * @PostConstruct public void initUsers() { List&lt;User&gt; users = Stream.of( new
+		 * User(101, &quot;javatechie&quot;, &quot;password&quot;, &quot;Admin&quot;), new User(102, &quot;user1&quot;, &quot;pwd1&quot;,
+		 * &quot;Customer&quot;), new User(103, &quot;user2&quot;, &quot;pwd2&quot;, &quot;Admin&quot;), new User(104, &quot;user3&quot;,
+		 * &quot;pwd3&quot;, &quot;Customer&quot;) ).collect(Collectors.toList());
+		 * repository.saveAll(users); }
+		 * 
+		 * 
+		 */
+	public static void main(String[] args) {
+<span class="nc" id="L32">		SpringApplication.run(FoodDeliveryApplication.class, args);</span>
+<span class="nc" id="L33">	}</span>
+	@Bean
+	public RestTemplate getRestTemplate() {
+<span class="fc" id="L36">		return new RestTemplate();</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>capstoneproject (24-May-2021 1:03:16 pm)</div></body></html>

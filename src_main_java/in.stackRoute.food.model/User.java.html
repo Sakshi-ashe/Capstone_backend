@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>User.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">capstoneproject (24-May-2021 1:03:16 pm)</a> &gt; <a href="../../index.html" class="el_group">capstoneproject</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">in.stackRoute.food.model</a> &gt; <span class="el_source">User.java</span></div><h1>User.java</h1><pre class="source lang-java linenums">package in.stackRoute.food.model;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+public class User {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int user_id;
+	@Column(unique = true)
+	private String userName;
+	private String name;
+	private String email;
+	private String password;
+	private String imagePath;
+	private LocalDateTime createdAt;
+	private String privilege;
+	
+<span class="fc" id="L35">    @OneToMany</span>
+    @JsonIgnore
+    private Set&lt;Favourite&gt; favourite=new HashSet&lt;&gt;();
+
+	
+
+<span class="fc" id="L41">	public User() {}</span>
+//	public User(int user_id, String userName, String password, String privilege) {
+//		super();
+//		this.user_id = user_id;
+//		this.userName = userName;
+//		this.password = password;
+//		this.privilege = privilege;
+//	}
+//	
+
+
+
+	public User(int user_id, String userName, String name, String email, String password, String imagePath,String privilege) {
+<span class="fc" id="L54">		super();</span>
+<span class="fc" id="L55">		this.user_id = user_id;</span>
+<span class="fc" id="L56">		this.userName = userName;</span>
+<span class="fc" id="L57">		this.name = name;</span>
+<span class="fc" id="L58">		this.email = email;</span>
+<span class="fc" id="L59">		this.password = password;</span>
+<span class="fc" id="L60">		this.imagePath = imagePath;</span>
+		//this.createdAt = createdAt;
+<span class="fc" id="L62">		this.privilege = privilege;</span>
+<span class="fc" id="L63">	}</span>
+	
+
+	public Set&lt;Favourite&gt; getFav() {
+<span class="fc" id="L67">		return favourite;</span>
+	}
+
+	public void setFav(Set&lt;Favourite&gt; fav) {
+<span class="nc" id="L71">		this.favourite= fav;</span>
+<span class="nc" id="L72">	}</span>
+
+
+
+	public String getName() {
+<span class="fc" id="L77">		return name;</span>
+	}
+	public void setName(String name) {
+<span class="fc" id="L80">		this.name = name;</span>
+<span class="fc" id="L81">	}</span>
+	public String getEmail() {
+<span class="fc" id="L83">		return email;</span>
+	}
+	public void setEmail(String email) {
+<span class="fc" id="L86">		this.email = email;</span>
+<span class="fc" id="L87">	}</span>
+	public String getImagePath() {
+<span class="fc" id="L89">		return imagePath;</span>
+	}
+	public void setImagePath(String imagePath) {
+<span class="nc" id="L92">		this.imagePath = imagePath;</span>
+<span class="nc" id="L93">	}</span>
+	public LocalDateTime getCreatedAt() {
+<span class="fc" id="L95">		return createdAt;</span>
+	}
+	public void setCreatedAt(LocalDateTime createdAt) {
+<span class="fc" id="L98">		this.createdAt = createdAt;</span>
+<span class="fc" id="L99">	}</span>
+	public int getUser_id() {
+<span class="fc" id="L101">		return user_id;</span>
+	}
+	public void setUser_id(int user_id) {
+<span class="nc" id="L104">		this.user_id = user_id;</span>
+<span class="nc" id="L105">	}</span>
+	public String getUserName() {
+<span class="fc" id="L107">		return userName;</span>
+	}
+	public void setUserName(String userName) {
+<span class="fc" id="L110">		this.userName = userName;</span>
+<span class="fc" id="L111">	}</span>
+	public String getPassword() {
+<span class="fc" id="L113">		return password;</span>
+	}
+	public void setPassword(String password) {
+<span class="fc" id="L116">		this.password = password;</span>
+<span class="fc" id="L117">	}</span>
+	public String getPrivilege() {
+<span class="fc" id="L119">		return privilege;</span>
+	}
+	public void setPrivilege(String privilege) {
+<span class="nc" id="L122">		this.privilege = privilege;</span>
+<span class="nc" id="L123">	}</span>
+	
+	
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>capstoneproject (24-May-2021 1:03:16 pm)</div></body></html>

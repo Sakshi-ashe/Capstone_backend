@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>SecurityConfig.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">capstoneproject (24-May-2021 1:03:16 pm)</a> &gt; <a href="../../index.html" class="el_group">capstoneproject</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">in.stackRoute.food.config</a> &gt; <span class="el_source">SecurityConfig.java</span></div><h1>SecurityConfig.java</h1><pre class="source lang-java linenums">package in.stackRoute.food.config;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.BeanIds;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
+
+import in.stackRoute.food.filter.JwtFilter;
+import in.stackRoute.food.service.CustomUserDetailsService;
+
+@Configuration
+@EnableWebSecurity
+<span class="fc" id="L29">public class SecurityConfig extends WebSecurityConfigurerAdapter {</span>
+
+	@Autowired
+	private CustomUserDetailsService userDetailsService;
+
+	
+	  @Autowired 
+	  private JwtFilter jwtFilter;
+	 
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+<span class="fc" id="L40">		auth.userDetailsService(userDetailsService);</span>
+<span class="fc" id="L41">	}</span>
+
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+<span class="fc" id="L45">		return NoOpPasswordEncoder.getInstance();</span>
+	}
+
+	@Bean(name = BeanIds.AUTHENTICATION_MANAGER)
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+<span class="fc" id="L51">		return super.authenticationManagerBean();</span>
+	}
+	
+	  
+	  @Override protected void configure(HttpSecurity http) throws Exception {
+<span class="fc" id="L56">		  http.csrf().</span>
+<span class="fc" id="L57">		    disable().authorizeRequests().</span>
+<span class="fc" id="L58">		    	antMatchers(&quot;/authentication&quot;).permitAll().</span>
+<span class="fc" id="L59">		    	antMatchers(&quot;/register&quot;).permitAll().</span>
+		    	
+<span class="fc" id="L61">		    	antMatchers(&quot;/swagger-ui.*&quot;).permitAll().</span>
+
+<span class="fc" id="L63">	  anyRequest().authenticated()</span>
+<span class="fc" id="L64">	  .and().exceptionHandling().and().sessionManagement()</span>
+<span class="fc" id="L65">	  .sessionCreationPolicy(SessionCreationPolicy.STATELESS);</span>
+<span class="fc" id="L66">	  http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);;</span>
+<span class="fc" id="L67">	  }</span>
+	  
+	  @Bean
+	    public FilterRegistrationBean corsFilter() {
+<span class="fc" id="L71">	        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();</span>
+<span class="fc" id="L72">	        CorsConfiguration config = new CorsConfiguration();</span>
+<span class="fc" id="L73">	        config.setAllowCredentials(true);</span>
+<span class="fc" id="L74">	        config.addAllowedOrigin(&quot;http://localhost:4200&quot;);</span>
+<span class="fc" id="L75">	        config.setAllowedMethods(Arrays.asList(&quot;POST&quot;, &quot;OPTIONS&quot;, &quot;GET&quot;, &quot;DELETE&quot;, &quot;PUT&quot;));</span>
+<span class="fc" id="L76">	        config.setAllowedHeaders(Arrays.asList(&quot;X-Requested-With&quot;, &quot;Origin&quot;, &quot;Content-Type&quot;, &quot;Accept&quot;, &quot;Authorization&quot;));</span>
+<span class="fc" id="L77">	        source.registerCorsConfiguration(&quot;/**&quot;, config);</span>
+<span class="fc" id="L78">	        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));</span>
+<span class="fc" id="L79">	        bean.setOrder(Ordered.HIGHEST_PRECEDENCE);</span>
+<span class="fc" id="L80">	        return bean;</span>
+	    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>capstoneproject (24-May-2021 1:03:16 pm)</div></body></html>

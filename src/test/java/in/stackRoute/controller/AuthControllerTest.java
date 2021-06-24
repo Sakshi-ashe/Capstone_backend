@@ -92,8 +92,10 @@ class AuthControllerTest {
 		private AuthenticationManager authenticationManager;
 
 
-		String bearerToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNTAwIiwiZXhwIjoxNjIxODE0MTY2LCJpYXQiOjE2MjE3NzgxNjZ9.CZ4gYu9PXfPLhjzS9_LKNCpLh0pJIiE8dMCn0wLlCck";
-				//"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYWtzaGkiLCJleHAiOjE2MjE3OTA5MzUsImlhdCI6MTYyMTc1NDkzNX0.N1boa-_oi-WZfNHSgb2aRE5OVYvSE4IA5avA3Ha0rns";
+		String bearerToken =  "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNTAwIiwiZXhwIjoxNjIyMDUwODYzLCJpYXQiOjE2MjIwMTQ4NjN9.MPbIEffz9MX7XBJLQyzwW6ychFUlpXz55Kdu7fhHR28";
+				//"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNTAwIiwiZXhwIjoxNjIxOTcxMDM3LCJpYXQiOjE2MjE5MzUwMzd9.ofPtTFkJI5MI-YtWoBnlkW9meFYmMW6EvDACi3t2GlE";
+				//"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNTAwIiwiZXhwIjoxNjIxODcwMzMzLCJpYXQiOjE2MjE4MzQzMzN9.iG5cYWQjfgQV2NxY1VDCoNAzBcjPZl42otxPWIA0h38";
+
 		@Mock
 		AuthController authController;
 		

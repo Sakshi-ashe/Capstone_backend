@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>RegisterRestTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">capstoneproject (24-May-2021 1:03:16 pm)</a> &gt; <a href="../../index.html" class="el_group">capstoneproject</a> &gt; <a href="../index.html" class="el_bundle">src/test/java</a> &gt; <a href="index.source.html" class="el_package">in.stackRoute.RestAssured</a> &gt; <span class="el_source">RegisterRestTest.java</span></div><h1>RegisterRestTest.java</h1><pre class="source lang-java linenums">package in.stackRoute.RestAssured;
+
+import static io.restassured.RestAssured.given;
+
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import in.stackRoute.food.FoodDeliveryApplication;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes=FoodDeliveryApplication.class)
+
+<span class="nc" id="L19">public class RegisterRestTest {</span>
+
+	@DataProvider(name=&quot;positive_register_data&quot;)
+	public String[] pos_reg() {
+<span class="nc" id="L23">		return new String[] {</span>
+
+	//correctJson =
+			&quot;{\&quot;userName\&quot;: \&quot;user22\&quot;,\r\n\&quot;name\&quot;: \&quot;xyz\&quot;,\r\n\&quot;email\&quot;: \&quot;user22@gmail.com\&quot;,\r\n\&quot;password\&quot;: \&quot;pass\&quot;}&quot;,
+	//noName =
+			&quot;{\&quot;userName\&quot;: \&quot;user23\&quot;,\r\n\&quot;email\&quot;: \&quot;user23@gmail.com\&quot;,\r\n\&quot;password\&quot;: \&quot;pass\&quot;}&quot;
+		};
+	}
+
+	
+	
+	// Post '/register' -- valid parameters passed
+	//@Test(dataProvider = &quot;positive_register_data&quot;, priority = 1)
+	public void test_postRegister_positive(String body) {
+
+<span class="nc" id="L38">		Response res = given().contentType(ContentType.JSON).body(body).when().post(&quot;http://localhost:9191/register&quot;)</span>
+<span class="nc" id="L39">				.then().assertThat().statusCode(201).contentType(ContentType.JSON).log().body().extract().response();</span>
+
+<span class="nc" id="L41">		String jsonString = res.toString();</span>
+<span class="nc" id="L42">		System.out.println(jsonString);</span>
+
+<span class="nc" id="L44">	}</span>
+	
+	
+	@DataProvider(name=&quot;negative_register_data&quot;)
+	public String[] neg_reg() {
+<span class="nc" id="L49">		return new String[] {</span>
+		//repeatedDetails =
+				&quot;{\&quot;userName\&quot;: \&quot;user13\&quot;,\r\n\&quot;name\&quot;: \&quot;xyz\&quot;,\r\n\&quot;email\&quot;: \&quot;user13@gmail.com\&quot;,\r\n\&quot;password\&quot;: \&quot;pass\&quot;}&quot;,
+		//repeatedUsername =
+				&quot;{\&quot;userName\&quot;: \&quot;user13\&quot;,\r\n\&quot;name\&quot;: \&quot;xyz\&quot;,\r\n\&quot;email\&quot;: \&quot;user14@gmail.com\&quot;,\r\n\&quot;password\&quot;: \&quot;pass\&quot;}&quot;,
+		//repeatedEmail =
+				&quot;{\&quot;userName\&quot;: \&quot;user14\&quot;,\r\n\&quot;name\&quot;: \&quot;xyz\&quot;,\r\n\&quot;email\&quot;: \&quot;user13@gmail.com\&quot;,\r\n\&quot;password\&quot;: \&quot;pass\&quot;}&quot;,
+		//noUSername =
+				&quot;{\&quot;name\&quot;: \&quot;xyz\&quot;,\r\n\&quot;email\&quot;: \&quot;user15@gmail.com\&quot;,\r\n\&quot;password\&quot;: \&quot;pass\&quot;}&quot;,
+		//noEmail =
+				&quot;{\&quot;userName\&quot;: \&quot;user15\&quot;,\r\n\&quot;name\&quot;: \&quot;xyz\&quot;,\r\n\&quot;password\&quot;: \&quot;pass\&quot;}&quot;,
+		//noPassword =
+				&quot;{\&quot;userName\&quot;: \&quot;user16\&quot;,\r\n\&quot;name\&quot;: \&quot;xyz\&quot;,\r\n\&quot;email\&quot;: \&quot;user16@gmail.com\&quot;}&quot;
+
+		};
+	}
+
+
+	//Post '/register' -- invalid parameters passed
+	@Test(dataProvider = &quot;negative_register_data&quot;,priority = 2)
+	public void test_postRegister_negative(String body) {
+
+		Response res = 
+<span class="nc" id="L72">				given()</span>
+<span class="nc" id="L73">				.contentType(ContentType.JSON)</span>
+<span class="nc" id="L74">				.body(body)</span>
+<span class="nc" id="L75">				.when()</span>
+<span class="nc" id="L76">					.post(&quot;http://localhost:9191/register&quot;)</span>
+<span class="nc" id="L77">				.then()</span>
+<span class="nc" id="L78">					.assertThat()</span>
+<span class="nc" id="L79">					.statusCode(409)</span>
+<span class="nc" id="L80">			         .contentType(ContentType.JSON)</span>
+<span class="nc" id="L81">					.log().body()</span>
+<span class="nc" id="L82">					.extract().response();</span>
+		
+<span class="nc" id="L84">		String jsonString = res.toString();</span>
+<span class="nc" id="L85">		System.out.println(jsonString);</span>
+		
+<span class="nc" id="L87">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>capstoneproject (24-May-2021 1:03:16 pm)</div></body></html>

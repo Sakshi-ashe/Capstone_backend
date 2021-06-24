@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>FavouriteService.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">capstoneproject (24-May-2021 1:03:16 pm)</a> &gt; <a href="../../index.html" class="el_group">capstoneproject</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">in.stackRoute.food.service</a> &gt; <span class="el_source">FavouriteService.java</span></div><h1>FavouriteService.java</h1><pre class="source lang-java linenums">package in.stackRoute.food.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.stackRoute.food.model.Book;
+import in.stackRoute.food.model.Favourite;
+import in.stackRoute.food.model.User;
+import in.stackRoute.food.repository.FavouriteRepository;
+
+@Service
+<span class="fc" id="L15">public class FavouriteService{</span>
+	@Autowired
+	public FavouriteRepository fRepository;
+	
+	
+	public List&lt;Favourite&gt; getAllFavourite(User user) {
+<span class="fc" id="L21">		List&lt;Favourite&gt; fList= fRepository.findAll();</span>
+<span class="fc" id="L22">		List&lt;Favourite&gt;result=new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">		for(int i=0;i&lt;fList.size();i++) {</span>
+<span class="pc bpc" id="L24" title="1 of 2 branches missed.">			if(fList.get(i).getUser().getUser_id()==user.getUser_id()) {</span>
+<span class="fc" id="L25">				result.add(fList.get(i));</span>
+			}
+		}
+<span class="fc" id="L28">		return result;</span>
+	}
+	
+	public Favourite save(User u,Book b) {
+<span class="fc" id="L32">		Favourite fav=new Favourite(b,u);</span>
+<span class="fc" id="L33">		return fRepository.save(fav);</span>
+	}
+
+	public Favourite contains(Book book,User user) {
+<span class="fc" id="L37">		List&lt;Favourite&gt; fList=getAllFavourite(user);</span>
+<span class="pc bfc" id="L38" title="All 2 branches covered.">		for(int i=0;i&lt;fList.size();i++) {</span>
+<span class="fc" id="L39">			Favourite f=fList.get(i);</span>
+<span class="pc bpc" id="L40" title="2 of 4 branches missed.">			if(f.getBook().getBook_id()==book.getBook_id() &amp;&amp; f.getUser().getUser_id()==user.getUser_id()) {</span>
+<span class="fc" id="L41">				return f;</span>
+			}
+		}
+<span class="fc" id="L44">		return null;</span>
+	}
+
+	public void remove(Favourite f) {
+<span class="fc" id="L48">		fRepository.deleteById(f.getId());</span>
+		
+<span class="fc" id="L50">	}</span>
+	
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span>capstoneproject (24-May-2021 1:03:16 pm)</div></body></html>
